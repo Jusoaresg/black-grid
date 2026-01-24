@@ -1,5 +1,4 @@
 using BlackGrid.Core.Actions;
-using BlackGrid.Core.Cards;
 using BlackGrid.Core.Combat;
 
 namespace BlackGrid.Core.Turn;
