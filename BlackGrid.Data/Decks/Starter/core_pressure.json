@@ -1,0 +1,8 @@
+{
+	"id": "DECK_CORE_PRESSURE",
+	"name": "Core Pressure",
+	"cards": [
+		"ENTITY_CORRUPTED_SENTINEL",
+		"ENTITY_CORRUPTED_SENTINEL"
+	]
+}

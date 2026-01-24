@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BlackGrid.Core/BlackGrid.Core.csproj" />
+  <Project Path="BlackGrid.Data/BlackGrid.Data.csproj" />
+  <Project Path="BlackGrid.DebugConsole/BlackGrid.DebugConsole.csproj" />
+  <Project Path="BlackGrid.Game/BlackGrid.Game.csproj" />
+</Solution>
