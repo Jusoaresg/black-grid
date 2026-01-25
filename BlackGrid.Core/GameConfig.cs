@@ -1,7 +1,9 @@
 ﻿namespace BlackGrid.Core;
 
-public class GameConfig
+public class GameConfig(string dataRootPath)
 {
+	public string DataRootPath { get; init; } = dataRootPath;
+
 	public int PlayerCount = 2;
 	public int BoardColumns = 6;
 

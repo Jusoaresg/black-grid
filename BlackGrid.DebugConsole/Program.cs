@@ -71,7 +71,10 @@ public class Program
 
 				turnManager.HandleAction(new EndPhaseAction(state.ActualPlayerIndex));
 			}
-			PrintBoard(state);
+
+			Phase[] notPrintable = [Phase.StartTurn, Phase.ResolveCombat, Phase.EndTurn];
+			if (!notPrintable.Contains(state.Phase))
+				PrintBoard(state);
 		}
 
 		Console.WriteLine(
@@ -90,7 +93,7 @@ public class Program
 			for (int i = 0; i < player.Board.Columns.Length; i++)
 			{
 				var col = player.Board.Columns[i];
-				Console.WriteLine($" Column {i}: Front={col.Front.Card?.CardDefinition.Name ?? "empty"}, Back={col.Back.Card?.CardDefinition.Name ?? "empty"}");
+				Console.WriteLine($" Column {i}: Back={col.Back.Card?.CardDefinition.Name ?? "empty"}, Front={col.Front.Card?.CardDefinition.Name ?? "empty"}");
 			}
 		}
 	}
