@@ -10,56 +10,77 @@ public class TurnManager(GameState state)
 
 	public void ResolvePhases()
 	{
-		switch (state.Phase)
+		bool resolvingPhases = true;
+		while (resolvingPhases)
 		{
-			case Phase.StartTurn:
-				ResolveStartPhase();
-				state.Phase = Phase.Action;
-				break;
-
-			case Phase.Action:
-				// Wait player input to change phase
-				break;
-
-			case Phase.DeclareAttack:
-				// Wait player input to change phase
-				break;
-
-			case Phase.ResolveCombat:
-				CombatSystem.ResolveCombat(state);
-				state.Phase = Phase.EndTurn;
-				break;
-
-			case Phase.EndTurn:
-				ResolveEndTurn();
-				ChangePlayer();
-				state.Phase = Phase.StartTurn;
-				break;
+			resolvingPhases = state.Phase switch
+			{
+				Phase.StartTurn => ResolveStart(),
+				Phase.ResolveCombat => ResolveCombat(),
+				Phase.EndTurn => ResolveEnd(),
+				_ => false,
+			};
 		}
 	}
 
 	public void HandleAction(IGameAction action)
 	{
+		//NOTE: Maybe reduntant as Match already checks
 		if (action.PlayerId != state.ActualPlayerIndex)
 			return;
 
-		action.Execute(state);
-	}
-
-	private void ResolveStartPhase()
-	{
-		var player = state.ActualPlayer;
-
-		if (player.Deck.Count == 0)
+		if (!action.CanExecute(state))
 			return;
 
-		player.Hand.Add(player.Deck.Draw());
+		action.Execute(state);
+
+		//NOTE: Change this when player wanted to pass phase. Like more than 1 action per phase
+		RequestAdvancePhase(action.PlayerId);
+		// ResolvePhases();
 	}
 
-	private void ResolveEndTurn() { }
-
-	private void ChangePlayer()
+	private void AdvancePhase()
 	{
-		state.ActualPlayerIndex = 1 - state.ActualPlayerIndex;
+		state.Phase = state.Phase switch
+		{
+			Phase.StartTurn => Phase.Action,
+			Phase.Action => Phase.DeclareAttack,
+			Phase.DeclareAttack => Phase.ResolveCombat,
+			Phase.ResolveCombat => Phase.EndTurn,
+			Phase.EndTurn => Phase.StartTurn,
+			_ => throw new Exception($"State {state.Phase} does not have a defined transition."),
+		};
+		PhaseChanged?.Invoke();
 	}
+
+	public void RequestAdvancePhase(int playerId)
+	{
+		if (playerId != state.ActualPlayerIndex)
+			return;
+
+		AdvancePhase();
+		ResolvePhases();
+	}
+
+	private bool ResolveStart()
+	{
+		TurnResolver.ResolveStartPhase(state);
+		AdvancePhase();
+		return true;
+	}
+
+	private bool ResolveEnd()
+	{
+		TurnResolver.ResolveEndTurn(state);
+		AdvancePhase();
+		return true;
+	}
+
+	private bool ResolveCombat()
+	{
+		CombatSystem.ResolveCombat(state);
+		AdvancePhase();
+		return true;
+	}
+
 }
