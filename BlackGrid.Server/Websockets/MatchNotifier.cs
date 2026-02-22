@@ -11,12 +11,18 @@ namespace BlackGrid.Server.Websockets;
 public record MatchStartDto(Guid MatchId, int PlayerId);
 public record GameOverDto(Guid MatchId, int WinnerPlayerId, string Reason);
 
-public class MatchNotifier
+public static class MatchNotifier
 {
 	public static async Task BroadcastMatchStart(Match match)
 	{
 		await SendMatchStart(match, match.PlayerA.Session);
 		await SendMatchStart(match, match.PlayerB.Session);
+
+		match.PhaseChangedHandler = () =>
+			_ = BroadcastGameState(match);
+
+		match.TurnManager.PhaseChanged += match.PhaseChangedHandler;
+		await BroadcastGameState(match);
 	}
 
 	private static async Task SendMatchStart(Match match, PlayerSession session)
@@ -70,6 +76,11 @@ public class MatchNotifier
 
 		var winnerSession = match.GetPlayerByIndex(winnerPlayerIndex).Session;
 		await Send(winnerSession, bytes);
+
+		if (match?.PhaseChangedHandler != null)
+		{
+			match.TurnManager.PhaseChanged -= match.PhaseChangedHandler;
+		}
 	}
 
 	public static async Task Send(PlayerSession session, byte[] bytes)

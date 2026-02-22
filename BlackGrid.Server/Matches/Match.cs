@@ -18,6 +18,7 @@ public class Match
 	public GameState State { get; }
 	public TurnManager TurnManager { get; }
 
+	public Action? PhaseChangedHandler;
 	public Match(MatchPlayer a, MatchPlayer b, GameConfig config)
 	{
 		PlayerA = a;

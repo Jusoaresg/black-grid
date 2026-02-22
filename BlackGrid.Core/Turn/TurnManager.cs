@@ -6,6 +6,7 @@ namespace BlackGrid.Core.Turn;
 public class TurnManager(GameState state)
 {
 	private readonly GameState state = state;
+	public event Action? PhaseChanged;
 
 	public void ResolvePhases()
 	{
