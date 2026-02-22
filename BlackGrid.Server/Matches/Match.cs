@@ -19,6 +19,7 @@ public class Match
 	public TurnManager TurnManager { get; }
 
 	public Action? PhaseChangedHandler;
+	public readonly SemaphoreSlim BroadcastLock = new(1, 1);
 	private readonly SemaphoreSlim _actionLock = new(1, 1);
 
 	public Match(MatchPlayer a, MatchPlayer b, GameConfig config)

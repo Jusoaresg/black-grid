@@ -47,19 +47,28 @@ public static class MatchNotifier
 
 	public static async Task BroadcastGameState(Match match)
 	{
-		foreach (var player in new[] { match.PlayerA, match.PlayerB })
+		await match.BroadcastLock.WaitAsync();
+
+		try
 		{
-			var dto = GameStateMapper.ToDto(match.State, match, player.PlayerId);
-
-			var json = JsonSerializer.Serialize(new
+			foreach (var player in new[] { match.PlayerA, match.PlayerB })
 			{
-				type = "game_state",
-				payload = dto
-			});
+				var dto = GameStateMapper.ToDto(match.State, match, player.PlayerId);
 
-			var bytes = Encoding.UTF8.GetBytes(json);
+				var json = JsonSerializer.Serialize(new
+				{
+					type = "game_state",
+					payload = dto
+				}, JsonOptions.Options);
 
-			await Send(player.Session, bytes);
+				var bytes = Encoding.UTF8.GetBytes(json);
+
+				await Send(player.Session, bytes);
+			}
+		}
+		finally
+		{
+			match.BroadcastLock.Release();
 		}
 	}
 
