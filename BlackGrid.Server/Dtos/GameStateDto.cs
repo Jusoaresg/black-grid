@@ -23,9 +23,16 @@ public record ColumnDto(
 	bool WillAttack
 );
 
+public record CardDefinitionDto(
+		string Id,
+		string Name,
+		string Description,
+		int Attack,
+		int Defense
+);
+
 public record CardDto(
-	string Name,
-	int Attack,
-	int Defense,
-	bool IsRevealed
+	string InstanceId,
+	bool IsRevealed,
+	CardDefinitionDto CardDefinition
 );

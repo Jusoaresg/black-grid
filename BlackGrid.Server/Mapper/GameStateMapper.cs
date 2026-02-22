@@ -36,10 +36,15 @@ public static class GameStateMapper
 		if (card == null) return null;
 
 		return new CardDto(
-			card.CardDefinition.Name,
-			card.CardDefinition.Attack,
-			card.CardDefinition.Defense,
-			card.IsRevealed
+			card.InstanceId,
+			card.IsRevealed,
+			new CardDefinitionDto(
+				card.CardDefinition.Id,
+				card.CardDefinition.Name,
+				card.CardDefinition.Description,
+				card.CardDefinition.Attack,
+				card.CardDefinition.Defense
+			)
 		);
 	}
 }
