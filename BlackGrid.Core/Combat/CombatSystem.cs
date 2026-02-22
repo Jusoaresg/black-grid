@@ -38,14 +38,14 @@ public class CombatSystem
 
 		if (frontDefenseCard != null)
 		{
-			if (attackValue > frontDefenseCard.CardDefinition.Defense)
+			if (attackValue > frontDefenseCard.CardDefinition.Attack)
 			{
 				DestroyCard(frontDefenseCard, defenderColumn.Front, defender);
 
-				var diff = attackValue - frontDefenseCard.CardDefinition.Defense;
+				var diff = attackValue - frontDefenseCard.CardDefinition.Attack;
 				if (backDefenseCard != null)
 				{
-					if (diff > backDefenseCard.CardDefinition.Defense)
+					if (diff > backDefenseCard.CardDefinition.Attack)
 						DestroyCard(backDefenseCard, defenderColumn.Back, defender);
 				}
 				else
@@ -53,7 +53,7 @@ public class CombatSystem
 					defender.TakeDamage(diff);
 				}
 			}
-			else if (attackValue == frontDefenseCard.CardDefinition.Defense)
+			else if (attackValue == frontDefenseCard.CardDefinition.Attack)
 			{
 				DestroyCard(frontDefenseCard, defenderColumn.Front, defender);
 				DestroyCard(attackerCard, attackerColumn.Front, attacker);
@@ -61,18 +61,7 @@ public class CombatSystem
 		}
 		else if (backDefenseCard != null)
 		{
-			if (attackValue > backDefenseCard.CardDefinition.Defense)
-			{
-				DestroyCard(backDefenseCard, defenderColumn.Back, defender);
-				var diff = attackValue - backDefenseCard.CardDefinition.Defense;
-				if (diff > 0)
-					defender.TakeDamage(diff);
-			}
-			else if (attackValue == backDefenseCard.CardDefinition.Defense)
-			{
-				DestroyCard(backDefenseCard, defenderColumn.Back, defender);
-				DestroyCard(attackerCard, attackerColumn.Front, attacker);
-			}
+			DestroyCard(backDefenseCard, defenderColumn.Back, defender);
 		}
 		else
 		{

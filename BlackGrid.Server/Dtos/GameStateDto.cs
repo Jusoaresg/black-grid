@@ -27,8 +27,7 @@ public record CardDefinitionDto(
 		string Id,
 		string Name,
 		string Description,
-		int Attack,
-		int Defense
+		int Attack
 );
 
 public record CardDto(

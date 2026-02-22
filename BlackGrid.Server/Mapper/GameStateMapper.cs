@@ -42,8 +42,7 @@ public static class GameStateMapper
 				card.CardDefinition.Id,
 				card.CardDefinition.Name,
 				card.CardDefinition.Description,
-				card.CardDefinition.Attack,
-				card.CardDefinition.Defense
+				card.CardDefinition.Attack
 			)
 		);
 	}
