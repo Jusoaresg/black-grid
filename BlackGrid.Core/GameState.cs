@@ -8,7 +8,7 @@ public class GameState(GameConfig config, Player[] players)
 	public GameConfig Config = config;
 
 	public Player[] Players = players;
-	public int ActualPlayerIndex = 0;
+	public int ActualPlayerIndex;
 	public Player ActualPlayer => Players[ActualPlayerIndex];
 	public Player OpponentPlayer => Players[1 - ActualPlayerIndex];
 
