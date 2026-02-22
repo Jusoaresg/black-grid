@@ -1,3 +1,5 @@
+using BlackGrid.Core.Turn;
+
 namespace BlackGrid.Core.Actions;
 
 public record AttackCardAction(int PlayerId, int SelectedColumn) : IGameAction
@@ -5,11 +7,15 @@ public record AttackCardAction(int PlayerId, int SelectedColumn) : IGameAction
 	public int PlayerId { get; } = PlayerId;
 	public int SelectedColumn { get; } = SelectedColumn;
 
+	public bool CanExecute(GameState state)
+	{
+		return state.Phase == Phase.DeclareAttack;
+	}
+
 	public void Execute(GameState state)
 	{
-		if (PlayerId != state.ActualPlayerIndex)
+		if (state.Phase != Phase.DeclareAttack)
 			return;
-
 
 		var player = state.ActualPlayer;
 

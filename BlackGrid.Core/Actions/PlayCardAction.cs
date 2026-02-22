@@ -8,6 +8,11 @@ public class PlayCardAction(int playerId, string cardInstanceId, int targetColum
 	public string CardInstanceId { get; } = cardInstanceId;
 	public int TargetColumn { get; } = targetColumn;
 
+	public bool CanExecute(GameState state)
+	{
+		return state.Phase == Phase.Action;
+	}
+
 	public void Execute(GameState state)
 	{
 		if (state.Phase != Phase.Action)
