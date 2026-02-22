@@ -2,6 +2,6 @@
 	"id": "ENTITY_CORRUPTED_SENTINEL",
 	"name": "Corrupted Sentinel",
 	"type": "entity",
-	"attack": 1000,
-	"defense": 1000
+	"attack": 1,
+	"defense": 0
 }

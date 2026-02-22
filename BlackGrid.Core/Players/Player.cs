@@ -8,7 +8,7 @@ public class Player(
 	int id,
 	Deck deck,
 	PlayerBoard board,
-	int startingLife = 20000
+	int startingLife = 10
     )
 {
 	public int Id { get; set; } = id;
