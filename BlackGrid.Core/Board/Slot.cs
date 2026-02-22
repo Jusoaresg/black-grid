@@ -9,6 +9,14 @@ public class Slot
 
 	internal void Place(CardInstance card)
 	{
+		// card.IsExhausted = true;
+
+		card.IsRevealed = card.CardDefinition.Type switch
+		{
+			CardType.Entity => true,
+			_ => false,
+		};
+
 		Card = card;
 	}
 
