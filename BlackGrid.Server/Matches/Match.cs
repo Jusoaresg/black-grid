@@ -19,6 +19,8 @@ public class Match
 	public TurnManager TurnManager { get; }
 
 	public Action? PhaseChangedHandler;
+	private readonly SemaphoreSlim _actionLock = new(1, 1);
+
 	public Match(MatchPlayer a, MatchPlayer b, GameConfig config)
 	{
 		PlayerA = a;
@@ -28,13 +30,21 @@ public class Match
 		TurnManager = new TurnManager(State);
 	}
 
-	public async void HandleAction(Guid userId, IGameAction action)
+	public async Task HandleAction(Guid userId, IGameAction action)
 	{
-		if (State.ActualPlayerIndex != GetPlayerIndex(userId))
-			return;
+		await _actionLock.WaitAsync();
+		try
+		{
+			if (State.ActualPlayerIndex != GetPlayerIndex(userId))
+				return;
 
-		TurnManager.HandleAction(action);
-		await MatchNotifier.BroadcastGameState(this);
+			TurnManager.HandleAction(action);
+			await MatchNotifier.BroadcastGameState(this);
+		}
+		finally
+		{
+			_actionLock.Release();
+		}
 	}
 
 	public int GetPlayerIndex(Guid userId)
