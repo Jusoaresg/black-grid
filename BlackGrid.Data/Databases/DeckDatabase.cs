@@ -10,12 +10,11 @@ public class DeckDatabase
 	public DeckDatabase(string decksRootFolder, CardDatabase cardDb)
 	{
 		_decks = [];
-		var options = JsonOptions.GetJsonOptions();
 
 		foreach (var file in Directory.GetFiles(decksRootFolder, "*.json", SearchOption.AllDirectories))
 		{
 			var json = File.ReadAllText(file);
-			var deck = JsonSerializer.Deserialize<DeckDefinition>(json, options);
+			var deck = JsonSerializer.Deserialize<DeckDefinition>(json, JsonOptions.Options);
 
 			if (deck == null)
 				throw new Exception($"Invalid deck file: {deck}");

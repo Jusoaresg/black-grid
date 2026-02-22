@@ -10,12 +10,11 @@ public class CardDatabase
 	public CardDatabase(string cardsRootPath)
 	{
 		_cards = [];
-		var options = JsonOptions.GetJsonOptions();
 
 		foreach (var file in Directory.GetFiles(cardsRootPath, "*.json", SearchOption.AllDirectories))
 		{
 			var json = File.ReadAllText(file);
-			var card = JsonSerializer.Deserialize<CardDefinition>(json, options);
+			var card = JsonSerializer.Deserialize<CardDefinition>(json, JsonOptions.Options);
 
 			if (card == null)
 				throw new Exception($"Invalid card file: {card}");

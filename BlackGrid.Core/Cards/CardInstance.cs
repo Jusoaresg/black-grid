@@ -1,5 +1,3 @@
-using BlackGrid.Core.Players;
-
 namespace BlackGrid.Core.Cards;
 
 public class CardInstance(string instanceId, CardDefinition card)

@@ -1,6 +1,7 @@
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
+using BlackGrid.Data;
 using BlackGrid.Server.Mapper;
 using BlackGrid.Server.Matches;
 using BlackGrid.Server.Session;
@@ -29,7 +30,7 @@ public class MatchNotifier
 		{
 			type = "match_start",
 			payload = dto
-		});
+		}, JsonOptions.Options);
 		var bytes = Encoding.UTF8.GetBytes(json);
 
 		await session.Socket.SendAsync(bytes,
@@ -64,7 +65,7 @@ public class MatchNotifier
 			type = "game_over",
 			payload = new GameOverDto(match.MatchId, (int)match.State.WinnerPlayerIndex, reason)
 		};
-		var json = JsonSerializer.Serialize(dto);
+		var json = JsonSerializer.Serialize(dto, JsonOptions.Options);
 		var bytes = Encoding.UTF8.GetBytes(json);
 
 		var winnerSession = match.GetPlayerByIndex(winnerPlayerIndex).Session;

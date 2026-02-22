@@ -5,15 +5,14 @@ namespace BlackGrid.Data;
 
 public static class JsonOptions
 {
-	public static JsonSerializerOptions GetJsonOptions()
+	public static JsonSerializerOptions Options = new()
 	{
-		var options = new JsonSerializerOptions
-		{
-			PropertyNameCaseInsensitive = true
-		};
-
-		options.Converters.Add(new JsonStringEnumConverter());
-
-		return options;
-	}
+		PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+		DictionaryKeyPolicy = JsonNamingPolicy.CamelCase,
+		PropertyNameCaseInsensitive = true,
+		Converters = {
+				new JsonStringEnumConverter(JsonNamingPolicy.CamelCase),
+				new JsonStringEnumConverter()
+			}
+	};
 }
