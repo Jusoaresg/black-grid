@@ -27,6 +27,8 @@ public class CombatSystem
 
 	private static void ResolveCombatAttack(Column attackerColumn, Column defenderColumn, Player attacker, Player defender)
 	{
+		attackerColumn.AddTension(1);
+
 		var attackerCard = attackerColumn.Front.Card;
 		if (attackerCard == null)
 			return;
@@ -40,6 +42,8 @@ public class CombatSystem
 		{
 			if (attackValue > frontDefenseCard.CardDefinition.Attack)
 			{
+				defenderColumn.AddTension(1);
+
 				DestroyCard(frontDefenseCard, defenderColumn.Front, defender);
 
 				var diff = attackValue - frontDefenseCard.CardDefinition.Attack;
@@ -55,16 +59,20 @@ public class CombatSystem
 			}
 			else if (attackValue == frontDefenseCard.CardDefinition.Attack)
 			{
+				defenderColumn.AddTension(1);
+
 				DestroyCard(frontDefenseCard, defenderColumn.Front, defender);
 				DestroyCard(attackerCard, attackerColumn.Front, attacker);
 			}
 		}
 		else if (backDefenseCard != null)
 		{
+			defenderColumn.AddTension(1);
 			DestroyCard(backDefenseCard, defenderColumn.Back, defender);
 		}
 		else
 		{
+			defenderColumn.AddTension(1);
 			defender.TakeDamage(attackValue);
 		}
 	}

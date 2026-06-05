@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_PILLAR_DEVOTEE",
+    "name": "Pillar Devotee",
+    "type": "entity",
+    "description": "If this column has 2 or more Tension, gain +1 ATK.",
+    "attack": 2
+}

@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_OVERLOAD_TRAP",
+    "name": "Overload Trap",
+    "type": "structure",
+    "description": "When this column reaches 3 tension, destroy all entities in this column.",
+    "attack": 0
+}

@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_STRUCTURAL_DRIFT",
+    "name": "Structural Drift",
+    "type": "structure",
+    "description": "Move 1 tension from any column to another column.",
+    "attack": 0
+}

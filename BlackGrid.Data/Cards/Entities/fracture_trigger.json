@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_FRACTURE_TRIGGER",
+    "name": "Fracture Trigger",
+    "type": "structure",
+    "description": "When this column is attacked, apply 1 Tension to this column.\nIf this column has 2 or more Tension, destroy the attacking entity.",
+    "attack": 0
+}

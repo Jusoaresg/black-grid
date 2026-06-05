@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_OBSERVER_OF_PRESSURE",
+    "name": "Observer of Pressure",
+    "type": "entity",
+    "description": "When this column gains tension, gain +1 ATK in this turn",
+    "attack": 2
+}

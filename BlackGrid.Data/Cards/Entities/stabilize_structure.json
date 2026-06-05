@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_STABILIZE_STRUCTURE",
+    "name": "Stabilize Structure",
+    "type": "structure",
+    "description": "Remove up to 2 Tension from one column.",
+    "attack": 0
+}

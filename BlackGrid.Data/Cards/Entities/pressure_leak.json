@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_PRESSURE_LEAK",
+    "name": "Pressure Leak",
+    "type": "structure",
+    "description": "Remove 1 tension from this column.\nApply 1 tension to the opposite column.",
+    "attack": 0
+}

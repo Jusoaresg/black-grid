@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_CHAIN_REACTION",
+    "name": "Chain Reaction",
+    "type": "structure",
+    "description": "When this column becomes corrupted,\napply 1 tension to all columns.",
+    "attack": 0
+}

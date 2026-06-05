@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_PRESSURE_ARCHITECT",
+    "name": "Pressure Architect",
+    "type": "entity",
+    "description": "When the opposite column gains Tension, gain +1 ATK this turn.",
+    "attack": 2
+}

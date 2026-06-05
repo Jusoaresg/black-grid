@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_CORRUPTION_HERALD",
+    "name": "Corruption Herald",
+    "type": "entity",
+    "description": "If this column is corrupted, apply 1 tension to adjacent columns.",
+    "attack": 2
+}

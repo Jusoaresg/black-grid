@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_FAULT_LINE",
+    "name": "Fault Line",
+    "type": "structure",
+    "description": "Apply 1 tension to two adjacent columns.",
+    "attack": 0
+}

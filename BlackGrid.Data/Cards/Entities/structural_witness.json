@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_STRUCTURAL_WITNESS",
+    "name": "Structural Witness",
+    "type": "entity",
+    "description": "When this column becomes corrupted, gain +2 ATK this turn",
+    "attack": 2
+}

@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_STRUCTURAL_ECHO",
+    "name": "Structural Echo",
+    "type": "structure",
+    "description": "When opposite column gains Tension, apply 1 Tension to this column.",
+    "attack": 0
+}

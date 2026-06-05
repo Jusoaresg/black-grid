@@ -14,7 +14,7 @@ public static class GameFactory
 		var cardDb = new CardDatabase(Path.Combine(config.DataRootPath, "Cards"));
 		var deckDb = new DeckDatabase(Path.Combine(config.DataRootPath, "Decks"), cardDb);
 
-		var deckDef = deckDb.Get("DECK_CORE_PRESSURE");
+		var deckDef = deckDb.Get("DECK_FRACTURE_PROTOCOL");
 		var instances = deckDef.CardIds.Select(id => new CardInstance(Guid.NewGuid().ToString(), cardDb.Get(id)));
 		var deck1 = new Deck(instances.Shuffle());
 		var deck2 = new Deck(instances.Shuffle());

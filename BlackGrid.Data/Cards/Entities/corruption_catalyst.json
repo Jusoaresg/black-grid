@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_CORRUPTION_CATALYST",
+    "name": "Corruption Catalyst",
+    "type": "structure",
+    "description": "Apply 2 Tension to this column.",
+    "attack": 0
+}

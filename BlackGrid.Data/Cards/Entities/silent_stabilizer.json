@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_SILENT_STABILIZER",
+    "name": "Silent Stabilizer",
+    "type": "entity",
+    "description": "When this entity enters play, remove 1 tension from all adjacent columns.",
+    "attack": 1
+}

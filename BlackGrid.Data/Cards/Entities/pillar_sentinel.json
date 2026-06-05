@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_PILLAR_SENTINEL",
+    "name": "Pillar Sentinel",
+    "type": "entity",
+    "description": "If this column has no tension, gain +1 ATK.",
+    "attack": 2
+}

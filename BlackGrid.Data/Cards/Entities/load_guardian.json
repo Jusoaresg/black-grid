@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_LOAD_GUARDIAN",
+    "name": "Load Guardian",
+    "type": "entity",
+    "description": "If this column has 0 tension,\nthis entity cannot be destroyed by entities with 3 ATK or less.",
+    "attack": 3
+}

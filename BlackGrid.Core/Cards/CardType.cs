@@ -3,8 +3,8 @@ namespace BlackGrid.Core.Cards;
 public enum CardType
 {
 	Entity,
+	Structure,
 	Trap,
-	Defense,
 	Utility,
 	Global
 }

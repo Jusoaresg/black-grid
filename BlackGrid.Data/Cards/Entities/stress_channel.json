@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_STRESS_CHANNEL",
+    "name": "Stress Channel",
+    "type": "structure",
+    "description": "When this column is attacked, apply 1 tension on attacker column",
+    "attack": 0
+}

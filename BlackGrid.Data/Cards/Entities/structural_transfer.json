@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_STRUCTURAL_TRANSFER",
+    "name": "Structural Transfer",
+    "type": "structure",
+    "description": "Move 1 entity to an adjacent column.",
+    "attack": 0
+}

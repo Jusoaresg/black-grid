@@ -1,0 +1,7 @@
+{
+    "id": "GLOBAL_ENTROPY_CYCLE",
+    "name": "Entropy Cycle",
+    "type": "global",
+    "description": "At the end of each round,\napply 1 tension to a random column.",
+    "attack": 0
+}

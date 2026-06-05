@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_ARCHITECT_OF_FRACTURE",
+    "name": "Architect of Fracture",
+    "type": "entity",
+    "description": "When attacks, apply 1 tension on opposite column",
+    "attack": 3
+}

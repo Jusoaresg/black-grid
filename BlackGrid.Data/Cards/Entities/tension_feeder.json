@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_TENSION_FEEDER",
+    "name": "Tension Feeder",
+    "type": "entity",
+    "description": "When this entity attacks, gain +1 tension on this column.",
+    "attack": 1
+}

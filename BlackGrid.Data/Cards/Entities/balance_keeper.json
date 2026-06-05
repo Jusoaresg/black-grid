@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_BALANCE_KEEPER",
+    "name": "Balance Keeper",
+    "type": "entity",
+    "description": "When this entity play, remove 1 tension from this column",
+    "attack": 2
+}

@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_EMERGENCY_REINFORCEMENT",
+    "name": "Emergency Reinforcement",
+    "type": "structure",
+    "description": "When this column is attacked, remove 2 Tension from this column.",
+    "attack": 0
+}

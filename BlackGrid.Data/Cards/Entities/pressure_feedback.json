@@ -1,0 +1,7 @@
+{
+    "id": "GLOBAL_PRESSURE_FEEDBACK",
+    "name": "Pressure Feedback",
+    "type": "global",
+    "description": "When a column becomes corrupted, both players gain 1 Tension in a random column.",
+    "attack": 0
+}

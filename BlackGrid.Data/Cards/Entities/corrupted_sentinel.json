@@ -1,7 +1,0 @@
-{
-	"id": "ENTITY_CORRUPTED_SENTINEL",
-	"name": "Corrupted Sentinel",
-	"type": "entity",
-	"attack": 1,
-	"defense": 0
-}

@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_TENSION_SPIKE",
+    "name": "Tension Spike",
+    "type": "structure",
+    "description": "Apply 1 Tension to any column",
+    "attack": 0
+}

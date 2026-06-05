@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_ECHO_OF_COLLAPSE",
+    "name": "Echo of Collapse",
+    "type": "entity",
+    "description": "+2 ATK if column is corrupted",
+    "attack": 2
+}

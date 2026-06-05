@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_HIDDEN_FRACTURE",
+    "name": "Hidden Fracture",
+    "type": "structure",
+    "description": "When the opposite entity attacks, apply +1 Tension to that column",
+    "attack": 0
+}

@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_VEIL_OBSERVER",
+    "name": "Veil Observer",
+    "type": "entity",
+    "description": "When a structure in this column is revealed, gain +2 ATK this turn.",
+    "attack": 1
+}

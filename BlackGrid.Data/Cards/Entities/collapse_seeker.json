@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_COLLAPSE_SEEKER",
+    "name": "Collapse Seeker",
+    "type": "entity",
+    "description": "If this column is corrupted, this entity cannot be destroyed by entities with 3 ATK or less.",
+    "attack": 3
+}

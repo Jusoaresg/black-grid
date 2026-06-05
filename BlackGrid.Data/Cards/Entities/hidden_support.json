@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_HIDDEN_SUPPORT",
+    "name": "Hidden Support",
+    "type": "structure",
+    "description": "When this column would become corrupted, remove 1 tension instead.",
+    "attack": 0
+}

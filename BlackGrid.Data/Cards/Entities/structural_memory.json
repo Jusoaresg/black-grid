@@ -1,0 +1,7 @@
+{
+    "id": "GLOBAL_STRUCTURAL_MEMORY",
+    "name": "Structural Memory",
+    "type": "global",
+    "description": "When a column becomes corrupted,\nentities in this column gain +1 ATK permanently.",
+    "attack": 0
+}

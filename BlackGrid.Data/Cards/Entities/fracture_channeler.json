@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_FRACTURE_CHANNELER",
+    "name": "Fracture Channeler",
+    "type": "entity",
+    "description": "When this entity destroys another entity, apply 1 Tension on this column.",
+    "attack": 3
+}

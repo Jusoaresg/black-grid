@@ -1,0 +1,7 @@
+{
+    "id": "ENTITY_FRACTURE_PROPHET",
+    "name": "Fracture Prophet",
+    "type": "entity",
+    "description": "When a column becomes corrupted, gain +2 ATK this turn.",
+    "attack": 2
+}

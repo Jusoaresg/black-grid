@@ -21,7 +21,9 @@ public static class GameStateMapper
 					p.Board.Columns.Select(c => new ColumnDto(
 						ToCardDto(c.Front.Card),
 						ToCardDto(c.Back.Card),
-						c.WillAttack
+						c.WillAttack,
+						c.Tension,
+						c.IsCorrupted
 					)).ToArray(),
 					p.Hand.Count,
 					hand
@@ -41,7 +43,7 @@ public static class GameStateMapper
 			new CardDefinitionDto(
 				card.CardDefinition.Id,
 				card.CardDefinition.Name,
-				card.CardDefinition.Description,
+				card.CardDefinition.Description ?? string.Empty,
 				card.CardDefinition.Attack
 			)
 		);

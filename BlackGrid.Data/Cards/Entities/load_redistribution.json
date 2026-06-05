@@ -1,0 +1,7 @@
+{
+    "id": "STRUCTURE_LOAD_REDISTRIBUTION",
+    "name": "Load Redistribution",
+    "type": "structure",
+    "description": "Move up to 2 tension between columns",
+    "attack": 0
+}

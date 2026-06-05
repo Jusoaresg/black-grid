@@ -20,7 +20,10 @@ public record PlayerDto(
 public record ColumnDto(
 	CardDto? Front,
 	CardDto? Back,
-	bool WillAttack
+	//NOTE: This will attack propably is futil
+	bool WillAttack,
+	int Tension,
+	bool IsCorrupted
 );
 
 public record CardDefinitionDto(

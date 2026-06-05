@@ -1,0 +1,7 @@
+{
+    "id": "GLOBAL_STRUCTUAL_WEAKNESS",
+    "name": "Structual Weakness",
+    "type": "global",
+    "description": "-1 ATK on corrupted columns",
+    "attack": 0
+}
